@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="../scss/common.css">
+  <link rel="stylesheet" href="../scss/destination.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap" rel="stylesheet">
+  <title>Destination | Space tourism website</title>
+  <script src="common.js" defer></script>
+  <script src="destination.js" defer></script>
+</head>
+<body>
+  <main class="contentSpanner">
+    <nav class="primaryNavigation">
+      <img class="logoImage" src="../starter-code/assets/shared/logo.svg" alt="logo image">
+      <div class="horizontalLine"></div>
+      <button class="mobileMenuToggle" aria-controls="navigation">
+        <img id="hamburger" src="../starter-code/assets/shared/icon-hamburger.svg" alt="mobile menu button">
+      </button>
+      <ul id="navigation" class="navigationList" aria-expanded="false" aria-labelledby="hamburger">
+        <a tabindex="0" href="index.html"><li><span class="numberSelector">00</span>Home</li></a>
+        <a tabindex="0" href="destination-moon.html"><li><span class="numberSelector">01</span>Destination</li></a>
+        <a tabindex="0" href="crew-commander.html"><li><span class="numberSelector">02</span>Crew</li></a>
+        <a tabindex="0" href="technology-vehicle.html"><li><span class="numberSelector">03</span>Technology</li></a>
+      </ul>
+    </nav>
+    <section class="mainContent">
+      <div class="celestialBodyGraphic">
+          <h1>
+            <span class="numberBold">01</span> 
+            Pick your destination
+          </h1>
+          <img class="bodyImage" src="../starter-code/assets/destination/image-moon.png" alt="image of chosen celestial body">
+      </div>
+      <div class="celestialBodyDescription">
+
+          <ul class="bodyPicker">
+            <a class="border moon" href="#"><li>Moon</li></a>
+            <a class="mars" href="#"><li>Mars</li></a>
+            <a class="europa" href="#"><li>Europa</li></a>
+            <a class="titan" href="#"><li>Titan</li></a>
+          </ul>
+          <h2 class="bodyName">Moon</h2>
+          <p class="bodyText">
+          See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
+          regain perspective and come back refreshed. While you’re there, take in some history 
+          by visiting the Luna 2 and Apollo 11 landing sites.</p>
+          <div class="columnWrapper">
+            <div class="column">
+              <h3>Avg. distance</h3>
+              <h2 class="bodyDistance">384,400 km</h2>
+            </div>
+            <div class="column">
+              <h3>Est. travel time</h3>
+              <h2 class="bodyTime">3 days</h2>
+            </div>
+          </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
