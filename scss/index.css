@@ -1,0 +1,209 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.contentWrapper {
+  margin-top: auto;
+  margin-bottom: 10%;
+  width: 80%;
+  align-self: center;
+  justify-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.textSpanner {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+}
+.textSpanner h2 {
+  color: hsl(231deg, 77%, 90%);
+  font-size: clamp(1rem, 1.5vw, 3rem);
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: 400;
+}
+.textSpanner h1 {
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-size: clamp(6rem, 9vw, 12rem);
+  text-transform: uppercase;
+  margin: 0;
+}
+.textSpanner h3 {
+  color: hsl(231deg, 77%, 90%);
+  margin: 0;
+  font-weight: 400;
+}
+
+.exploreButton {
+  font-size: clamp(2rem, 2vw, 3rem);
+  font-family: "Bellefair", serif;
+  align-self: flex-end;
+  width: 16rem;
+  height: 16rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 0;
+  position: relative;
+  z-index: 2;
+}
+.exploreButton:hover, .exploreButton:focus, .exploreButton:focus-within {
+  cursor: pointer;
+}
+.exploreButton:hover::before, .exploreButton:focus::before, .exploreButton:focus-within::before {
+  opacity: 1;
+}
+.exploreButton a {
+  text-decoration: none;
+  color: hsl(230deg, 35%, 7%);
+}
+
+.exploreButton::before {
+  content: "";
+  z-index: 1;
+  opacity: 0;
+  width: 24rem;
+  height: 24rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: 500ms ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .contentSpanner {
+    background-image: url(../starter-code/assets/home/background-home-tablet.jpg);
+  }
+  .contentSpanner .contentWrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 1;
+  }
+  .contentSpanner .contentWrapper .exploreButton {
+    align-self: center;
+    margin-block: auto;
+  }
+  .contentSpanner .contentWrapper .textSpanner {
+    width: 70%;
+    text-align: center;
+    margin-block: auto;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .textSpanner {
+    width: 90%;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    margin-top: 10%;
+    margin-bottom: 35%;
+  }
+  .textSpanner h3 {
+    font-size: clamp(0.5rem, 3.5vw, 2rem);
+  }
+  .textSpanner h1 {
+    font-size: clamp(4rem, 15vw, 10rem);
+    font-family: "Bellefair", serif;
+    font-weight: 400;
+  }
+  .exploreButton {
+    width: 10rem;
+    height: 10rem;
+    align-self: center;
+    justify-self: center;
+  }
+  .exploreButton::before {
+    width: 0;
+    height: 15rem;
+  }
+}
+.navigationList a:first-of-type {
+  border-bottom: 2px white solid;
+  cursor: pointer;
+  transform: translateY(1px);
+}/*# sourceMappingURL=index.css.map */

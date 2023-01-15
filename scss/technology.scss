@@ -1,0 +1,285 @@
+@use "_reset.scss";
+
+
+$primary-100:hsl(230, 35%, 7%);
+$primary-400:hsl(231, 77%, 90%);
+$primary-900:hsl(0, 0%, 100%);
+
+$ff-paragraph: 'Barlow', sans-serif;
+$ff-sub-headers: 'Barlow Condensed', sans-serif;
+$ff-headers: 'Bellefair', serif;
+
+
+.contentSpanner{
+    background-image: url(../starter-code/assets/technology/background-technology-desktop.jpg);
+}
+
+.navigationList{
+    a:nth-of-type(4){
+        border-bottom: 2px white solid;
+        cursor: pointer;
+        transform: translateY(1px);
+    }
+}
+
+.technologySection{
+    display: flex;
+    flex-direction: column;
+}
+
+.technologyContent{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+
+.headerUtility{
+    font-family: $ff-headers;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+
+
+.header{
+    margin-top: 10%;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-family: $ff-sub-headers;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+
+.numberBold{
+    font-weight: 700;
+    opacity: 0.25;
+    letter-spacing: 5px;
+    padding-right:5% ;
+    font-family: $ff-sub-headers;
+}
+
+.buttonsColumn{
+    margin-left: 15vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15vh;
+    button{
+        border-radius: 50%;
+        border: 1px solid rgba($primary-900, $alpha: 0.25);
+        color: $primary-900;
+        background-color:transparent;
+        aspect-ratio: 1/1;
+        width: 6rem;
+        height: 6rem;
+        font-size: clamp(1rem, 4vw, 2rem);
+        font-family: $ff-headers;
+        margin-block: 1rem;
+        &:hover,
+        &:focus{
+            cursor: pointer;
+            border: 1px solid rgba($primary-900, $alpha: 1.0);
+            transition: 500ms ease-in-out;
+        }
+    }
+    &:first-of-type{
+        padding-top: 0%;
+    }
+}
+
+.activated{
+    background-color: $primary-900 !important;
+    color: $primary-100 !important;
+    border: 0 !important;
+}
+
+.textSpanner{
+    width:60%;
+   padding-inline: 5%;
+   margin-top: 15vh;
+   h2{
+    font-family: $ff-sub-headers;
+    font-weight: 400;
+    font-size: clamp(1rem, 2vw, 2rem);
+    text-transform: uppercase;
+   }
+
+   p{
+    font-family: $ff-paragraph;
+    color: $primary-400;
+    font-size: clamp(0.5rem, 1.2vw, 2rem);
+    width: 45ch;
+   }
+}
+
+.technologyName{
+    font-size: clamp(1rem, 6vw, 4rem);
+}
+
+.imageSpanner{
+    width: 40%;
+    display: flex;
+    img{
+        align-self: flex-end;
+        width: 100%;
+    }
+}
+
+.mobileImage{
+    display: none;
+}
+.mobileWrapper{
+    display: none;
+}
+
+
+
+@media only screen and (max-width:600px){
+    .technologyContent{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "image"
+                             "buttons"
+                              "text";
+    }
+    .imageSpanner{
+        width: 100%;
+    }
+    .mobileImage{
+        display: block;
+        width: 100%;
+        grid-area: image;
+    }
+    .technologyImage{
+        display: none;
+    }
+    .header{
+        text-align: center;
+        font-size: clamp(1rem, 5vw, 3rem);
+        padding-block: 2rem;
+    }
+    .buttonsColumn{
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        grid-area: buttons;
+        margin-inline: auto;
+        margin-block: 2rem;
+        button{
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-inline: 0.5rem;
+        }
+    }
+    .textSpanner{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        grid-area: text;
+        text-align: center;
+        flex-direction: column;
+        p{
+            align-self: center;
+            font-size: clamp(0.5rem, 4vw, 3rem);
+            width: 90%;
+            padding-bottom: 2rem;
+        }
+        h2{
+            color: $primary-400;
+            font-size: clamp(1rem, 4vw, 3rem);
+        }
+    }
+    .technologyName{
+        font-size: clamp(1rem, 8vw, 3rem);
+    }
+}
+
+
+
+@media only screen and (min-width:600px) and (max-width:1000px){
+
+    .technologyContent{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "image"
+                             "buttons"
+                              "text";
+    }
+    .imageSpanner{
+        width: 100%;
+    }
+    .mobileImage{
+        display: block;
+        width: 100%;
+        grid-area: image;
+    }
+    .technologyImage{
+        display: none;
+    }
+    .header{
+        
+        font-size: clamp(1rem, 5vw, 3rem);
+        padding-block: 2rem;
+    }
+    .buttonsColumn{
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        grid-area: buttons;
+        margin-inline: auto;
+        margin-block: 2rem;
+        button{
+            width: 3.75rem;
+            height: 3.75rem;
+            margin-inline: 0.5rem;
+        }
+    }
+    .textSpanner{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        grid-area: text;
+        text-align: center;
+        flex-direction: column;
+        p{
+            align-self: center;
+            font-size: clamp(0.5rem, 2.5vw, 3rem);
+            width: 70%;
+            padding-bottom: 2rem;
+        }
+        h2{
+            color: $primary-400;
+            font-size: clamp(1rem, 4vw, 3rem);
+        }
+    }
+    .technologyName{
+        font-size: clamp(1rem, 7vw, 3rem);
+    }
+}
+
+    
+@media only screen and (min-width:1000px) and (max-width:1300px){
+    .buttonsColumn{
+        button{
+            width: 5rem;
+            height: 5rem;
+        }
+        
+        
+    }
+    .textSpanner{
+        p{
+            font-size: clamp(0.5rem, 1.5vw, 1.5rem);
+            width: 40ch;
+        }
+    }
+    .technologyName{
+        font-size: clamp(1rem, 5vw, 3rem);
+    }
+}

@@ -1,0 +1,292 @@
+@use "_reset.scss";
+
+
+$primary-100:hsl(230, 35%, 7%);
+$primary-400:hsl(231, 77%, 90%);
+$primary-900:hsl(0, 0%, 100%);
+
+$ff-paragraph: 'Barlow', sans-serif;
+$ff-sub-headers: 'Barlow Condensed', sans-serif;
+$ff-headers: 'Bellefair', serif;
+
+
+
+
+.contentSpanner{
+    background-image: url(../starter-code/assets/crew/background-crew-desktop.jpg);
+}
+
+.navigationList{
+    a:nth-of-type(3){
+        border-bottom: 2px white solid;
+        cursor: pointer;
+        transform: translateY(1px);
+    }
+}
+
+.crewSection{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    align-self: center;
+    flex-grow: 1;
+}
+
+.crewText{
+    width: 50%;
+    flex-grow: 1;
+
+}
+.crewJob{
+    opacity: 0.5;
+    margin-top: 20%;
+    font-size: clamp(1rem, 5vw, 3rem);
+}
+
+.crewName{
+    font-size: clamp(3rem, 7vw, 5rem);
+}
+.crewParagraph{
+    font-family: $ff-paragraph;
+    color: $primary-400;
+    font-weight: 400;
+    font-size: clamp(1rem, 1.3vw, 3rem);
+    max-width: 45ch;
+}
+.headerUtility{
+    font-family: $ff-headers;
+        font-weight: 400;
+        text-transform: uppercase;
+}
+.crewPhotoWrapper{
+    width: 50%;
+    flex-grow: 1;
+    margin-top: auto;
+    margin-inline: auto;
+    overflow: hidden;
+    img{
+        height: 80vh;
+    }
+}
+.active{
+    background-color: $primary-900 !important;
+    
+}
+.numberBold{
+    font-weight: 700;
+    opacity: 0.25;
+    letter-spacing: 5px;
+    padding-right:5% ;
+    font-family: $ff-sub-headers;
+}
+
+.header{
+    margin-top: 10%;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-family: $ff-sub-headers;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+.buttonsWrapper{
+    position: fixed;
+    left: 4.5%;
+    bottom: 10%;
+    button{
+        margin-inline:1rem;
+        width: 1rem;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        border: 0;
+        background-color: rgba($primary-900, 0.17);
+        &:hover,
+        &:focus{
+            cursor: pointer;
+            background-color: $primary-900;
+            transition: 300ms ease-in-out;
+        }
+    }
+}
+.buttonsWrapperMobile{
+    display: none;
+    button{
+        display: none;
+        margin-inline:1rem;
+        width: 1rem;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        border: 0;
+        background-color: rgba($primary-900, 0.17);
+        &:hover,
+        &:focus{
+            cursor: pointer;
+            background-color: $primary-900;
+            transition: 300ms ease-in-out;
+        }
+    }
+}
+.mobileOnly{
+    display: none;
+
+}
+
+
+
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+	-webkit-clip-path: inset(50%) !important;
+		clip-path: inset(50%) !important;  /* 2 */
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;            /* 3 */
+}
+
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+	clip: auto !important;
+	-webkit-clip-path: none !important;
+		clip-path: none !important;
+	height: auto !important;
+	margin: auto !important;
+	overflow: visible !important;
+	width: auto !important;
+	white-space: normal !important;
+}
+
+
+@media only screen and (max-width:600px){
+    .contentSpanner{
+        background-image: url(../starter-code/assets/crew/background-crew-mobile.jpg);
+    }
+    .crewSection{
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    .crewText{
+        width: 100%;
+        h2{
+            text-align: center;
+        }
+        .crewName{
+            text-align: center;
+            font-size: clamp(1rem, 8vw, 3rem);
+            padding-block: 5%;
+        }
+        .crewParagraph{
+            text-align: center;
+            font-size: clamp(1rem, 5vw, 3rem);
+        }
+        .crewJob{
+            margin: 0;
+        }
+    }
+    .crewParagraph{
+        padding-bottom: 10%;
+    }
+    .mobileOnly{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        padding-top: 5%;
+        border-bottom: 2px solid rgba($primary-900, 0.17);
+        align-items: center;
+        width: 100%;
+        img{
+            width: 60%;
+            padding: 0;
+        }
+    }
+    .buttonsWrapperMobile{
+        padding-block: 15%;
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+        width: 100%;
+       justify-content: center;
+        button{
+            display: block;
+            align-self: center;
+        }
+    }
+    .buttonsWrapper{
+        display: none;
+    }
+    .crewPhotoWrapper{
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width:600px)and (max-width:1300px){
+    .contentSpanner{
+        background-image: url(../starter-code/assets/crew/background-crew-tablet.jpg);
+    }
+    .mobileOnly{
+        display: none;
+    }
+    .buttonsWrapperMobile{
+        display: none;
+        button{
+            display: none;
+        }
+    }
+    .crewSection{
+        flex-direction: column;
+        .crewText{
+            width: 100%;
+            .crewName{
+                text-align: center;
+                
+            }
+            .crewJob{
+                text-align: center;
+            }
+            .crewParagraph{
+                text-align: center;
+                width: 100%;
+                align-self: center;
+                margin-inline: auto;
+                font-size: clamp(1rem, 2.5vw, 2rem);
+                padding-block: 5%;
+            }
+        }
+    }
+
+    .buttonsWrapper{
+        position: relative;
+        //width: 100vw;
+        align-items: center;
+        justify-content: space-around;
+        justify-items: center;
+        padding-block: 5%;
+        margin-left: 35vw;
+        margin-right: 35vw;
+        button{
+            margin-left: auto;    
+        }
+    }
+    .crewPhotoWrapper{
+        width: 100%;
+        
+        img{
+            align-self: center;
+            margin-inline: auto;
+        }
+    }
+
+}
+
+
+@media only screen and (min-width:1300px) and (max-width:1700px){
+    .buttonsWrapper{
+        position: absolute;
+        bottom: 3vw;
+        left: 3vw;
+    }
+}

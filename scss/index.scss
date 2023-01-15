@@ -1,0 +1,156 @@
+@use "_reset.scss";
+
+
+$primary-100:hsl(230, 35%, 7%);
+$primary-400:hsl(231, 77%, 90%);
+$primary-900:hsl(0, 0%, 100%);
+
+$ff-paragraph: 'Barlow', sans-serif;
+$ff-sub-headers: 'Barlow Condensed', sans-serif;
+$ff-headers: 'Bellefair', serif;
+
+
+.contentWrapper{
+    margin-top: auto;
+    margin-bottom: 10%;
+    width: 80%;
+    align-self: center;
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+
+.textSpanner{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    font-family: $ff-paragraph;
+    font-weight: 400;
+    h2{
+        color: $primary-400;
+        font-size: clamp(1rem, 1.5vw, 3rem);
+        text-transform: uppercase;
+        margin: 0;
+        font-weight: 400;
+    }
+    h1{
+        font-family: $ff-headers;
+        font-weight: 400;
+        font-size: clamp(6rem, 9vw, 12rem);
+        text-transform: uppercase;
+        margin: 0;
+    }
+    h3{
+        color:$primary-400 ;
+        margin: 0;
+        font-weight: 400;
+    }
+}
+
+.exploreButton{
+    font-size: clamp(2rem, 2vw, 3rem);
+    font-family: $ff-headers;
+    align-self: flex-end;
+    width: 16rem;
+    height: 16rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 0;
+    position: relative;
+    z-index: 2;
+    &:hover,
+    &:focus,
+    &:focus-within{
+       cursor: pointer;
+       &::before{
+        opacity: 1;
+       }
+    }
+    a{
+        text-decoration: none;
+        color:$primary-100 ;
+    }
+}
+.exploreButton::before{
+    content: '';
+    z-index: 1;
+    opacity: 0;
+    width: 24rem;
+    height: 24rem;
+    background-color: rgba($color: #FFF, $alpha: 0.1);
+    transition: 500ms ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    border-radius: 50%;
+    
+}
+
+
+@media only screen and(min-width:600px) and (max-width:1000px){
+
+    .contentSpanner{
+        background-image: url(../starter-code/assets/home/background-home-tablet.jpg);
+        .contentWrapper{
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            flex-grow: 1;
+            .exploreButton{
+                align-self: center;
+                margin-block:auto ;
+            }
+            .textSpanner{
+                width: 70%;
+                text-align: center;
+                margin-block:auto ;
+            }
+        }
+    }
+}
+
+    
+@media only screen and (max-width:600px){
+    .contentWrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    .textSpanner{
+        width: 90%;
+        text-align:center;
+        justify-self: center;
+        align-self: center;
+        margin-top: 10%;
+        margin-bottom: 35%;
+        h3{
+            font-size: clamp(0.5rem, 3.5vw, 2rem);
+        }
+        h1{
+            font-size: clamp(4rem, 15vw, 10rem);
+            font-family: $ff-headers;
+            font-weight: 400;
+        }
+    }
+    .exploreButton{
+        width: 10rem;
+        height: 10rem;
+        align-self: center;
+        justify-self: center;
+    }
+    .exploreButton::before{
+        width: 0;
+        height: 15rem;
+    }
+}
+
+.navigationList{
+    a:first-of-type{
+        border-bottom: 2px white solid;
+        cursor: pointer;
+        transform: translateY(1px);
+    }
+}
